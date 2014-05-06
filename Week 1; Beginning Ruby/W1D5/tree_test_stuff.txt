@@ -1,0 +1,10 @@
+a = TreeNode.new("a")
+b = TreeNode.new("b")
+c = TreeNode.new("c")
+d = TreeNode.new("d")
+e = TreeNode.new("e")
+
+a.add_child(b)
+a.add_child(c)
+b.add_child(d)
+b.add_child(e)

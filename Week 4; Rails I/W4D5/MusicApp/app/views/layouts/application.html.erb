@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Record Inventory</title>
+  <%= stylesheet_link_tag "application", media: "all" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <!-- LOGGED IN AS: -->
+  <% if current_user %>
+
+    <p style="font: 7pt;">
+      <form action="<%= session_url %>" method="post">
+        <!-- IT'S A DELETE! -->
+
+        <input
+          type="hidden"
+          name="_method"
+          value="delete"
+          id="_method">
+
+        <input
+          type="hidden"
+          name="authenticity_token"
+          value="<%= form_authenticity_token %>">
+
+        <input type="submit" value="Log out">
+
+      </form>
+      <br>
+      <em>
+        Logged in as <%= current_user.email %> &mdash;
+        <a href="<%= bands_url %>">All Bands</a>
+        <!--  &mdash; <a href="<%#= albums_url %>">Albums</a> &mdash;
+        <a href="<%#= tracks_url %>">Tracks</a> &mdash; -->
+      </em>
+
+
+    </p>
+
+  <% end %>
+
+  <!-- YIELD -->
+  <%= yield %>
+  <!-- ! -->
+
+  <%= render "flash/alerts" %>
+
+</body>
+</html>

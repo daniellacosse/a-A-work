@@ -1,0 +1,33 @@
+<h1><%= @band.band_name %></h1>
+
+<h2>Albums:</h2>
+
+<% @band.albums.each do |album| %>
+
+  <a href="<%= album_url(album) %>">
+    <strong>
+      <%= album.title %>
+    </strong>
+  </a>
+
+  <ol>
+    <% album.tracks.each do |track| %>
+      <li>
+        <a href="<%= track_url(track) %>">
+          <%= track.title %>
+        </a>
+      </li>
+    <% end %>
+  </ol>
+
+<% end %>
+
+<form action="<%= new_band_album_url(@band) %>" method="get" >
+
+  <%= auth_token %>
+
+  <p>
+    <input type="submit" value="Register New Album for <%= @band.band_name %>">
+  </p>
+
+</form>

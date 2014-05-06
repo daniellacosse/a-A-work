@@ -1,0 +1,49 @@
+<h1 id="edit_goal_page">Edit Goal Page</h1>
+
+<form action="<%= goal_url(@goal) %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+
+  <%= auth_token %>
+
+<input type="hidden" name="goal[user_id]" value="<%= current_user.id %>">
+
+<label>
+  Goal Name <br>
+  <input type="text" name="goal[name]" value="<%= @goal.name %>">
+</label>
+<br> <br>
+
+<label>
+  Description <br>
+  <textarea name="goal[description]">
+  <%= @goal.description %>
+  </textarea>
+</label>
+<br> <br>
+
+<label>
+  This Goal is: <br>
+  <select name="goal[private?]">
+    <option value="false">
+      Public
+    </option>
+    <option value="true" <%= "selected" if @goal.private? %>>
+      Private
+    </option>
+  </select>
+</label>
+<br>
+<label>
+  This goal has: <br>
+  <select name="goal[completed?]">
+    <option value="true">
+      been completed!
+    </option>
+    <option value="false">
+      not been completed :(
+    </option>
+  </select>
+</label>
+
+  <p><input type="submit" value="Update Goal"></p>
+</form>

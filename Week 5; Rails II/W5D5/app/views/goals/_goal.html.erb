@@ -1,0 +1,7 @@
+<br><br>
+<a href="<%= goal_url(goal) %>"><%= goal.name %></a>
+<p>&emsp;<%= goal.description %></p>
+<p class="small">By: <%= goal.user.username %></p>
+<% if goal.completed? %>
+  COMPLETED
+<% end %>

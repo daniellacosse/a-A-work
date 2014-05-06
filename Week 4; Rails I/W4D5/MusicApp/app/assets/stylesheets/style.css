@@ -1,0 +1,21 @@
+* {
+
+  font-family: helvetica,sans-serif;
+
+  background-color: gray;
+  color: white;
+
+}
+
+input, textarea, select, option {
+
+  padding: 7px;
+
+  border: 3px solid white;
+  margin-top: 10px;
+
+  background-color: #555;
+
+}
+
+.alert { background-color: red; padding: 7px;}

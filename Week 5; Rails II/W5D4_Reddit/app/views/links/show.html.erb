@@ -1,0 +1,22 @@
+<a href="<%= @link.url %>"><%= @link.title %></a>
+<p><%= @link.body %></p>
+
+<form action="<%= edit_link_url(@link) %>" method="get">
+  <%= auth_token %>
+
+
+<input type="submit" value="Edit this Link">
+</form>
+
+<form action="<%= subs_url %>" method="get">
+
+  <%= auth_token %>
+
+<input type="submit" value="Back to Subs">
+</form>
+
+<form action="<%= link_url(@link) %>" method="post">
+  <%= auth_token %>
+  <input type="hidden" name="_method" value="delete">
+  <input class="delete_button" type="submit" value="DELETE">
+</form>

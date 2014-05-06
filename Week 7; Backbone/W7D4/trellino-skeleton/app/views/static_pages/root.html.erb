@@ -1,0 +1,19 @@
+<div id="content" class="container"></div>
+<script>
+  $(function () {
+    $(document).ready(function(){
+      Trellino.initialize();
+
+
+      //put this in it's own script and call it
+      //rendering the partial and parsing --results to new.
+      var boardsCollection = new Trellino.Collections.Boards(
+        <%= render(partial: "boards.json.jbuilder", locals: {boards: @boards}).html_safe %>, { parse: true }
+      );
+
+      new Trellino.Routers.Boards(boardsCollection, $('#content'))
+
+      Backbone.history.start()
+    });
+  });
+</script>

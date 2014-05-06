@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SCORE MONKEY</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<nav>
+
+  <a href="<%= goals_url %>">SCORE MONKEY</a>&emsp;
+
+  <% if signed_in? %>
+    <a href="<%= user_url(current_user) %>"><%= current_user.username %></a>
+  <% end %>
+
+  <div class="float_right">
+    <% if signed_in? %>
+
+    <form action="<%= new_goal_url %>" method="get">
+        <%= auth_token %>
+      <input type="submit" value="+">
+    </form>
+
+      <form action="<%= session_url %>" method="post">
+          <input type="hidden" name="_method" value="delete">
+          <%= auth_token %>
+        <input type="submit" value="Sign Out">
+      </form>
+
+    <% end %>
+  </div>
+
+</nav>
+
+<div class="spacer"></div>
+
+<section>
+
+  <%= yield %>
+
+  <% if flash[:errors] %>
+    <%= flash[:errors] %>
+  <% end %>
+
+</section>
+
+</body>
+</html>

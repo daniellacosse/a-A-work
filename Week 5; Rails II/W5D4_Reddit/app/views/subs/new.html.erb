@@ -1,0 +1,25 @@
+<form action="<%= subs_url %>" method="post">
+  <%= auth_token %>
+
+  <label>
+    Name
+    <input type="text" name="sub[name]">
+  </label>
+
+<% 5.times do |i| %>
+  <label>
+    Link Title <%= i %>
+    <input type="text" name="link[<%= i %>][title]">
+  </label>
+  <label>
+    Link URL <%= i %>
+    <input type="text" name="link[<%= i %>][url]">
+  </label>
+  <label>
+    Link Body <%= i %>
+    <input type="text" name="link[<%= i %>][body]">
+  </label>
+<% end %>
+
+  <p><input type="submit" value='Create Sub "Reddit"'></p>
+</form>

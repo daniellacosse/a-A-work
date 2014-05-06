@@ -1,0 +1,67 @@
+<form action="<%= album_tracks_url %>" method="post">
+
+  <%= auth_token %>
+
+  <p>
+    <label for="track_title">
+      Track Title:
+    </label>
+    <br>
+
+    <input
+      type="text"
+      name="track[title]"
+      id="track_title">
+  </p>
+
+  <p>
+    <label for="track_lyrics">
+      Lyrics:
+    </label>
+    <br>
+
+    <textarea
+      name="track[lyrics]"
+      id="track_lyrics">
+    </textarea>
+  </p>
+
+  <p>
+    <label for="track_album_id">
+      On Album:
+    </label>
+    <br>
+
+    <select name="track[album_id]" id="track_album_id">
+      <option></option>
+      <% Album.all.each do |a| %>
+
+        <option
+          value="<%= a.id %>"
+          <%= "selected" if params[:album_id] == a.id.to_s %> >
+            <%= a.title %>
+        </option>
+
+      <% end %>
+    </select>
+  </p>
+
+  <p>
+    <label for="bonus_track">
+      Bonus:
+    </label>
+
+    <input type="hidden" name="track[bonus]" value="false" >
+
+    <input
+      type="checkbox"
+      name="track[bonus]"
+      id="bonus_track"
+      value="true">
+  </p>
+
+  <p>
+    <input type="submit" value="Register">
+  </p>
+
+</form>

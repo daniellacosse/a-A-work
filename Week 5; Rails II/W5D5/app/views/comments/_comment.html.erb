@@ -1,0 +1,10 @@
+<p><%= comment.body %></p>
+<p class="small">Comment By: <%= User.find(comment.author_id).username %> | <em class="small"><%= time_ago_in_words(comment.created_at) %> ago</em></p>
+
+<form action="<%= comment_url(comment) %>" method="post">
+  <%= auth_token %>
+  <input type="hidden" name="_method" value="delete">
+
+
+  <p><input type="submit" value="delete commment"></p>
+</form>

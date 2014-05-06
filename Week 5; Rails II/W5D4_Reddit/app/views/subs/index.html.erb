@@ -1,0 +1,13 @@
+<h1>All Subs</h1>
+
+<%= render @subs %>
+
+<form action="<%= new_sub_url %>" method="get">
+  <%= auth_token %>
+  <input type="submit" value="Create Sub">
+</form>
+
+<form action="<%= new_link_url %>" method="get">
+  <%= auth_token %>
+  <input type="submit" value="Create Link">
+</form>

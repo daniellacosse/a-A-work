@@ -1,0 +1,49 @@
+<form action="<%= session_url %>" method="post">
+
+  <% user_controller = (params[:controller] == "users") %>
+
+  <%= auth_token %>
+
+  <p>
+    <label for="user_email">
+      Email:
+    </label>
+    <br>
+    <input
+      type="text"
+      name="user[email]"
+      id="user_email"
+      value="<%= @user.try(:email) %>">
+  </p>
+
+  <p>
+    <label for="user_email">
+      Password:
+    </label>
+    <br>
+    <input
+      type="password"
+      name="user[password]"
+      id="user_password">
+  </p>
+
+  <% if user_controller %>
+    <p>
+      <label for="user_email">
+        Confirm Password:
+      </label>
+      <br>
+      <input
+        type="password"
+        name="user[conf_password]"
+        id="user_password">
+    </p>
+  <% end %>
+
+  <p>
+    <input
+      type="submit"
+      value="<%= user_controller ? "Sign up" : "Sign in" %>">
+  </p>
+
+</form>

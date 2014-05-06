@@ -1,0 +1,11 @@
+<h2><%= board.escape("title") %></h2>
+
+<ul>
+  <% board._lists.each(function(list){ %>
+
+    <li><%= list.get("title") %></li>
+
+    <!-- a list card partial -->
+
+  <% }) %>
+</ul>

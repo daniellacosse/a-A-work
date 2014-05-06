@@ -1,0 +1,36 @@
+<h1>"Reddit" | Sign Up</h1>
+<br>
+
+<form action="<%= users_url %>" method="post">
+  <%= auth_token %>
+
+<label>
+  Username
+  <br>
+  <input type="text" name="user[username]">
+</label>
+<br>
+
+<label>
+  Email
+  <br>
+  <input type="email" name="user[email]">
+</label>
+<br>
+
+<label>
+  Password
+  <br>
+  <input type="password" name="user[password]">
+</label>
+<br>
+
+<label>
+  Confirm Password
+  <br>
+  <input type="password" name="user[password_confirm]">
+</label>
+<br>
+
+<input type="submit" value="Sign Up">
+</form>

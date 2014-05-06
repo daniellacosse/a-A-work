@@ -1,0 +1,148 @@
+body, html, ul, li, header, nav, img, form, input {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	
+	font: inherit;
+	font-family: sans-serif;
+}
+
+body, html {
+	width: 100%;
+	height: 100%;
+	background-color: #1E3120;
+}
+
+.clearfix:after {
+	content: "";
+	clear: both;
+}
+
+.light-gray-gradient {
+	background: linear-gradient(to top, #FFFFFF 50%, #F4F4F4 100%);
+}
+
+ul {
+	list-style-type: none;
+}
+
+header.navbar {
+	position: fixed;
+	width: 100%;
+	top: 0;
+
+	background: linear-gradient(to top, rgba(172, 193, 175, 0.85) 5%, rgba(195, 213, 202, 1	) 100%);
+	color: white;
+	z-index: 2;
+}
+
+.navbar-button {
+	cursor: pointer;
+}
+
+.navbar-button:hover {
+	background-color: #1E3120;
+	box-shadow: inset 0 2px 2px 2px black;
+	border-bottom: 1px solid #1E3120;
+}
+
+header.navbar > ul {
+	display: block;
+	float: left;
+}
+
+header.navbar > ul > li {
+	display: block;
+	float: left;
+	padding: 20px;
+	text-shadow: 0 1px 1px #E3FFE6;
+}
+
+header.navbar > nav.navbar-button {
+	display: block;
+	float: right;
+	position: relative;
+	padding: 20px;
+	text-shadow: 0 1px 1px #E3FFE6;
+}
+
+header.navbar > nav.navbar-button > form.search-form { 
+	display: none;
+	
+	background-color: #1E3120;
+	position: fixed;
+	left: 0;
+	top: 59px;
+	width: 100%;
+
+  box-sizing: border-box;
+	
+	padding: 20px;
+	z-index: 2;
+}
+
+header.navbar > nav.navbar-button:hover > form.search-form {
+	display: block;
+}
+
+header.navbar > nav.navbar-button > form.search-form > input[type="search"] {
+	padding: 10px 5px;
+	width: 100%;
+	border: 3px solid #1E3120;
+
+  box-sizing: border-box;
+}
+
+header.navbar > nav.navbar-button > form.search-form > input[type="search"]:focus {
+	border: 3px solid #C3D5CA;
+	outline: 0;
+}
+
+section.front-page-gallery {
+	display: block;
+	margin: auto;
+	width: 80%;
+	min-width: 500px;
+	height: 100%;
+	padding: 80px 0;
+	z-index: 1;
+	background-color: #1E3120;
+}
+
+section.front-page-gallery > .picture-frame {
+	position: relative;
+	background-color: #1A2A1B;
+	padding: 20px;
+	float: left;
+	margin: 20px;
+}
+
+section.front-page-gallery > .picture-frame > img {
+	background-color: white;
+	display: block;
+	cursor: pointer;
+	position: relative;
+	z-index: 2;
+}
+
+section.front-page-gallery > .picture-frame > img + figcaption.tooltip {
+	display: none;
+	
+	position: absolute;
+	padding: 60px;
+	margin-top: -40px;
+	margin-left: -60px;
+	top: 0;
+	width: 297px;
+	height: 200px;
+	
+	background-color: rgba(0, 0, 0, 0.6);
+	z-index: 1;
+	
+	border: 2px solid #222;
+}
+
+section.front-page-gallery > .picture-frame > img:hover + figcaption.tooltip {
+	display: block;
+
+}

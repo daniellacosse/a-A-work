@@ -1,0 +1,4 @@
+<% boards.each( function(board){ %>
+  <% debugger %>
+  <li><a href="#boards/<%= board.get('id') %>"><%= board.escape("title") %></a></li>
+<% }) %>

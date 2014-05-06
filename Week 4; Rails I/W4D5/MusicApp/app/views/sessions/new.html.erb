@@ -1,0 +1,16 @@
+<!-- new session! -->
+<h1> Record Inventory </h1>
+
+<!-- sign in form -->
+<%= render "users/login_form" %>
+
+<!-- sign up form -->
+<form action="<%= new_user_url %>" method="get">
+
+  <%= auth_token %>
+
+  <p>
+    <input type="submit" value="Sign up">
+  </p>
+
+</form>

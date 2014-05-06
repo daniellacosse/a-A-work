@@ -1,0 +1,17 @@
+<br><hr>
+<form action="<%= comments_url %>" method="post">
+
+  <%= auth_token %>
+
+  <label for="body">New Comment</label><br>
+  <textarea name="comment[body]"></textarea>
+
+  <input type="hidden" name="comment[commentable_id]" value="<%= @subject.id %>" id="comment[commentable]">
+
+  <input type="hidden" name="comment[commentable_type]" value="<%= @subject.class.to_s %>" id="comment[commentable_type]">
+
+  <input type="hidden" name="comment[author_id]" value="<%= current_user.id %>">
+
+  <p><input type="submit" value="Submit New Comment"></p>
+</form>
+

@@ -1,0 +1,37 @@
+<h1><%= @sub.name %></h1>
+
+<br><br>
+
+<%= render @links %>
+
+<br><br>
+
+Moderated by: <%= @sub.moderator.username %>
+
+<br>
+
+<form action="<%= new_link_url %>" method="get">
+  <%= auth_token %>
+
+<input type="submit" value="+">
+</form>
+
+<form action="<%= edit_sub_url(@sub) %>" method="get">
+  <%= auth_token %>
+
+
+<input type="submit" value="Edit this Sub">
+</form>
+
+<form action="<%= subs_url %>" method="get">
+
+  <%= auth_token %>
+
+<input type="submit" value="All Subs">
+</form>
+
+<form action="<%= sub_url(@sub) %>" method="post">
+  <%= auth_token %>
+  <input type="hidden" name="_method" value="delete">
+  <input class="delete_button" type="submit" value="DELETE">
+</form>

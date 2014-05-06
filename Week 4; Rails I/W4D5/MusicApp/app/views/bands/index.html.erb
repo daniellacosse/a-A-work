@@ -1,0 +1,18 @@
+<h1>Every Band</h1>
+
+<% Band.all.each do |band| %>
+  <a href="<%= band_url(band) %>">
+    <%= band.band_name %>
+  </a>
+  <br>
+<% end %>
+
+<form action="<%= new_band_url %>" method="get" >
+
+  <%= auth_token %>
+
+  <p>
+    <input type="submit" value="Register New Band">
+  </p>
+
+</form>

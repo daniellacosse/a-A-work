@@ -1,0 +1,34 @@
+<form action="<%= goals_url %>" method="post">
+
+  <%= auth_token %>
+
+<input type="hidden" name="goal[user_id]" value="<%= current_user.id %>">
+
+<label>
+  New Goal Name <br>
+  <input type="text" name="goal[name]" value="<%= @goal.name %>">
+</label>
+<br> <br>
+
+<label>
+  Description <br>
+  <textarea name="goal[description]" value="<%= @goal.description %>">
+  </textarea>
+</label>
+<br> <br>
+
+<label>
+  This Goal is: <br>
+  <select name="goal[private?]">
+    <option value="false">
+      Public
+    </option>
+    <option value="true" <%= "selected" if @goal.private? %>>
+      Private
+    </option>
+  </select>
+</label>
+
+
+  <p><input type="submit" value="Create New Goal"></p>
+</form>

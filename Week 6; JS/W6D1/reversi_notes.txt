@@ -1,0 +1,59 @@
+
+Board {
+
+
+function makeMove(position, color) {
+if notValidMove(position, color) return false;
+
+this.placePiece();
+return true;
+}
+
+function notValidMove(position, color){
+/*
+
+invalid if not directly adjacent to opposing piece
+go in necessary cardinal directions -- if there's a piece in that direction that's yours
+also you need to check to see if all the pieces between are occupied by the opposite color
+
+invalid move @ X:
+
+|X|B|_|B|W|
+
+{
+  1. the edge of the board
+  2. empty square
+  3. same color as you (valid move)
+}
+
+array of coodinate sets (8) move counter clockwise
+
+
+
+*/
+}
+
+
+function placePiece{
+
+
+}
+
+function flipPieces{
+}
+
+
+
+
+
+
+}
+
+Game(){
+
+while(not the right thing)
+
+
+...
+
+}

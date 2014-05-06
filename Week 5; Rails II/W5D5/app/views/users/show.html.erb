@@ -1,0 +1,15 @@
+<%= "#{@user.username}'s show page!" %>
+
+
+<% if @goals %>
+My goals:
+  <%= render @goals %>
+<% end %>
+
+
+<!-- here be link to comment -->
+
+<%= render 'comments/new_comment' %>
+<h2>Comments</h2>
+______________________________
+<%= render @user.comments %>

@@ -1,0 +1,14 @@
+<h2><%= feed.get("title") %></h2>
+
+<ul>
+  <% entries.each(function(entry) { %>
+    <li>
+      <a href="<%= entry.get("guid") %>"><%= entry.get("title") %></a>
+      <br>
+      <em>Published at: <%= entry.get("published_at") %></em>
+      <br>
+    </li>
+  <% }) %>
+</ul>
+
+<button class="refresh">Refresh Feed</button>

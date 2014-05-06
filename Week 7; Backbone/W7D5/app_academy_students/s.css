@@ -1,0 +1,152 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+
+  font: inherit;
+  font-family: sans-serif;
+}
+
+.clearfix:after{
+  display: block;
+  content: "";
+  clear: both;
+}
+
+.notifications {
+  border-radius: 100%;
+  background-color: black;
+  font-size: 10pt;
+  padding: 2px 5px;
+}
+
+header {
+  font-size: 14pt;
+  color: white;
+  background-color: #FB0011;
+  border-bottom: 4px solid black;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 30pt;
+  margin-bottom: 25px;
+}
+
+header h1 {
+  display: block;
+  font-size: 14pt;
+  font-weight: bold;
+  width: auto;
+  margin-bottom: 0;
+}
+
+header h1, header li {
+  float: left;
+  padding: 12px 20px;
+}
+
+header li, header nav {
+  border-left: 4px solid black;
+}
+
+header nav {
+  border-right: 4px solid black;
+}
+
+header nav {
+  width: 905px;
+  margin: auto;
+}
+
+section {
+  width: 913px;
+  margin: auto;
+}
+
+article {
+  padding: 20px;
+  border-left: 4px solid #D4D4D4;
+  border-right: 4px solid #D4D4D4;
+
+}
+
+aside {
+  width: 200px;
+  float: left;
+  margin-right: 20px;
+  padding-right: 20px;
+  border-right: 4px solid #D4D4D4;
+}
+
+ul {
+  float: right;
+  list-style-type: none;
+}
+
+h2 {
+  float: left;
+}
+
+footer {
+  display: block;
+  padding: 20px;
+  background: #D4D4D4;
+  border: 4px solid #C0C0C0;
+  color: #878787;
+}
+
+footer li {
+  float: left;
+  margin-left: 20px;
+}
+
+li {
+  position: relative;
+  cursor: pointer;
+}
+
+div.notification-dropdown {
+  display: none;
+  top: 100%;
+  left: -4px;
+  position: absolute;
+  width: 350px;
+  background: gray;
+  border: 3px solid black;
+  border-top: 4px solid black;
+  border-bottom: 0;
+}
+
+ul.drop-da-beat > li {
+  border-left: 0;
+  font-size: 12pt;
+  background-color: white;
+  color: black;
+  display: block;
+  width: 100%;
+  padding: 6px 10px ;
+  border-bottom: 3px solid black;
+}
+
+ul.drop-da-beat {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+}
+
+ul.drop-da-beat > li.gray {
+  background-color: #C0C0C0;
+}
+
+li:hover > div.notification-dropdown {
+  display: block;
+}
+
+header li:hover {
+  background-color: #262626;
+}
+
+li:hover span {
+  background-color: red;
+}

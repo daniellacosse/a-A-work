@@ -1,0 +1,15 @@
+a = Node.new("a")
+b = Node.new("b")
+c = Node.new("c")
+d = Node.new("d")
+e = Node.new("e")
+
+a.add_children(b, c)
+b.add_children(d, e)
+
+e.g.:
+    a
+   / \
+  b   c
+ / \
+d  e

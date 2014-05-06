@@ -1,0 +1,31 @@
+<h1><%= @album.title %></h1>
+
+<h2>
+  Artist:
+</h2>
+
+<a href="<%= band_url(@album.band) %>">
+  <%= @album.band.band_name %>
+</a>
+
+<h2>Tracks:</h2>
+
+<% @album.tracks.each do |track| %>
+
+  <a href="<%= track_url(track) %>">
+    <strong>
+      <%= track.title %>
+    </strong>
+  </a>
+
+<% end %>
+
+<form action="<%= new_album_track_url(@album) %>" method="get" >
+
+  <%= auth_token %>
+
+  <p>
+    <input type="submit" value="Register New Track for <%= @album.title %>">
+  </p>
+
+</form>

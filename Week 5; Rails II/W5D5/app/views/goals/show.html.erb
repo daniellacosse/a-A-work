@@ -1,0 +1,28 @@
+<h1><%= @goal.name %></h1>
+<p><%= @goal.description %></p>
+
+<% if @goal.completed? %>
+  <p>COMPLETED</p>
+  <% else %>
+  <form action="<%= edit_goal_url(@goal) %>" method="get">
+    <%= auth_token %>
+
+  <input type="submit" value="Mark as completed.">
+  </form>
+<% end %>
+
+<form action="<%= goal_url(@goal) %>" method="post">
+  <%= auth_token %>
+
+  <input type="hidden" name="_method" value="delete">
+
+<input class="red_button" type="submit" value="X">
+</form>
+
+<%= render 'comments/new_comment' %>
+<h2>Comments</h2>
+<hr>
+<%= render @goal.comments %>
+
+<!-- here be link to comment -->
+
